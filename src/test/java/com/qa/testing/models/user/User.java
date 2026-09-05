@@ -7,8 +7,7 @@ import java.util.UUID;
 /**
  * Representa la entidad User del recurso /user de la Petstore API.
  * Incluye un factory estatico para generar instancias validas sin
- * repetir logica de instanciacion en cada test (ver seccion
- * "Introduce DSL object factories" del documento de buenas practicas).
+ * repetir logica de instanciacion en cada test.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class User {

@@ -2,9 +2,7 @@ package com.qa.testing.constants;
 
 /**
  * Agrupa constantes usadas en el modulo de testing de la Petstore API.
- * Evita hardcodear strings/numeros magicos en tests y clases de api
- * (ver seccion "Extract string literals and magic numbers" del
- * documento de buenas practicas).
+ * Evita hardcodear strings y numeros magicos en tests y clases de api.
  */
 public final class Constants {
 
