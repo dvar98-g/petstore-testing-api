@@ -10,7 +10,7 @@ public final class Constants {
     }
 
     /**
-     * Paths relativos de los endpoints del recurso User.
+     * Paths relativos de los endpoints de los recursos User y Pet.
      * El host/base URL se maneja aparte, en Config.
      */
     public static final class Endpoints {
@@ -24,6 +24,10 @@ public final class Constants {
         public static final String USER_CREATE_WITH_LIST = "/user/createWithList";
         public static final String USER_LOGIN = "/user/login";
         public static final String USER_LOGOUT = "/user/logout";
+
+        public static final String PET = "/pet";
+        public static final String PET_BY_ID = "/pet/{petId}";
+        public static final String PET_FIND_BY_STATUS = "/pet/findByStatus";
     }
 
     /**
@@ -38,6 +42,9 @@ public final class Constants {
         public static final String USERNAME_PATH_PARAM = "username";
         public static final String LOGIN_USERNAME_QUERY_PARAM = "username";
         public static final String LOGIN_PASSWORD_QUERY_PARAM = "password";
+
+        public static final String PET_ID_PATH_PARAM = "petId";
+        public static final String STATUS_QUERY_PARAM = "status";
     }
 
     /**
@@ -52,5 +59,18 @@ public final class Constants {
         public static final int OK = 200;
         public static final int NOT_FOUND = 404;
         public static final int BAD_REQUEST = 400;
+    }
+
+    /**
+     * Valores validos del campo status del recurso Pet.
+     */
+    public static final class PetStatus {
+
+        private PetStatus() {
+        }
+
+        public static final String AVAILABLE = "available";
+        public static final String PENDING = "pending";
+        public static final String SOLD = "sold";
     }
 }
