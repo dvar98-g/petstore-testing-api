@@ -10,7 +10,7 @@ public final class Constants {
     }
 
     /**
-     * Paths relativos de los endpoints de los recursos User y Pet.
+     * Paths relativos de los endpoints de los recursos User, Pet y Store.
      * El host/base URL se maneja aparte, en Config.
      */
     public static final class Endpoints {
@@ -28,6 +28,10 @@ public final class Constants {
         public static final String PET = "/pet";
         public static final String PET_BY_ID = "/pet/{petId}";
         public static final String PET_FIND_BY_STATUS = "/pet/findByStatus";
+
+        public static final String STORE_ORDER = "/store/order";
+        public static final String STORE_ORDER_BY_ID = "/store/order/{orderId}";
+        public static final String STORE_INVENTORY = "/store/inventory";
     }
 
     /**
@@ -45,6 +49,8 @@ public final class Constants {
 
         public static final String PET_ID_PATH_PARAM = "petId";
         public static final String STATUS_QUERY_PARAM = "status";
+
+        public static final String ORDER_ID_PATH_PARAM = "orderId";
     }
 
     /**
@@ -72,5 +78,18 @@ public final class Constants {
         public static final String AVAILABLE = "available";
         public static final String PENDING = "pending";
         public static final String SOLD = "sold";
+    }
+
+    /**
+     * Valores validos del campo status del recurso Order.
+     */
+    public static final class OrderStatus {
+
+        private OrderStatus() {
+        }
+
+        public static final String PLACED = "placed";
+        public static final String APPROVED = "approved";
+        public static final String DELIVERED = "delivered";
     }
 }
