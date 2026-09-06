@@ -12,12 +12,22 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
+
+/**
+ * Verifica la funcionalidad de consulta de una mascota especifica
+ * (requisito 4 de la historia de usuario). El test es independiente:
+ * crea su propia mascota como precondicion.
+ */
 public class GetPetTest {
 
     private final PetApi petApi = new PetApi();
     private Long createdPetId;
     private Pet createdPet;
 
+    /**
+     * Crea una mascota antes de cada test, para tener un id valido
+     * sobre el cual consultar.
+     */
     @BeforeMethod
     public void createPet() {
         createdPet = Pet.random();
@@ -26,6 +36,10 @@ public class GetPetTest {
         createdPetId = createResponse.as(Pet.class).getId();
     }
 
+    /**
+     * Obtiene la mascota creada por su id y verifica que los datos
+     * devueltos coincidan con los enviados en la creacion.
+     */
     @Test
     public void getPet_byExistingId_returnsPet() {
         Response getResponse = petApi.getPetById(createdPetId);

@@ -14,6 +14,13 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
+
+/**
+ * Verifica la funcionalidad de creacion de una orden para una mascota
+ * (requisito 5 de la historia de usuario). El test es independiente:
+ * crea su propia mascota como precondicion.
+ */
+
 public class CreateOrderTest {
 
     private final PetApi petApi = new PetApi();
@@ -22,6 +29,11 @@ public class CreateOrderTest {
     private Long createdPetId;
     private Long createdOrderId;
 
+
+    /**
+     * Crea una mascota antes de cada test, ya que una orden valida
+     * necesita un petId existente.
+     */
     @BeforeMethod
     public void createPetForOrder() {
         Pet pet = Pet.random();
@@ -30,6 +42,11 @@ public class CreateOrderTest {
         createdPetId = createPetResponse.as(Pet.class).getId();
     }
 
+    /**
+     * Crea una orden para la mascota de la precondicion y verifica, via
+     * un GET posterior, que los datos persistidos coinciden con los
+     * enviados en la creacion.
+     */
     @Test
     public void createOrder_thenOrderIsPersisted() {
         Order newOrder = Order.randomForPet(createdPetId);

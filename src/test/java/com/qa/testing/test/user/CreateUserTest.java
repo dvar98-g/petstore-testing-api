@@ -11,11 +11,22 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
+/**
+ * Verifica la funcionalidad de creacion de usuario (requisito 1 de la
+ * historia de usuario). Cubre el flujo completo: crea un usuario nuevo
+ * y confirma que la Petstore API lo persistio correctamente.
+ */
+
 public class CreateUserTest {
 
     private final UserApi userApi = new UserApi();
     private String createdUsername;
 
+
+    /**
+     * Crea un usuario random y verifica, via un GET posterior, que los
+     * datos persistidos coinciden con los enviados en la creacion.
+     */
     @Test
     public void createUser_thenUserIsPersisted() {
         User newUser = User.random();

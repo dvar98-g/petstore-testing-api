@@ -11,10 +11,22 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
+
+/**
+ * Verifica la creacion de una mascota. No es un requisito explicito de
+ * la historia de usuario, pero valida el flujo base sobre el cual se
+ * apoyan otros tests del modulo Pet y Store.
+ */
 public class CreatePetTest {
 
     private final PetApi petApi = new PetApi();
     private Long createdPetId;
+
+
+    /**
+     * Crea una mascota random y verifica, via un GET posterior, que los
+     * datos persistidos coinciden con los enviados en la creacion.
+     */
 
     @Test
     public void createPet_thenPetIsPersisted() {
