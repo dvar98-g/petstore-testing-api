@@ -107,7 +107,7 @@ Requiere los siguientes **Repository Secrets** configurados en GitHub:
 
 | Secret | Descripción |
 |---|---|
-| `BASE_URL` | URL base de la Petstore API (`https://petstore.swagger.io/v2`) |
+| `BASE_URL` | URL base de la Petstore API |
 | `DEFAULT_TIMEOUT_SECONDS` | Timeout de conexión/socket en segundos |
 
 ## Principios de diseño aplicados
