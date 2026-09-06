@@ -15,12 +15,24 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.everyItem;
 import static org.hamcrest.Matchers.hasItem;
 
+
+/**
+ * Verifica la funcionalidad de listado de mascotas por status
+ * "disponible" (requisito 3 de la historia de usuario). El test es
+ * independiente: crea su propia mascota con status "available" como
+ * precondicion, en vez de depender de datos preexistentes en el
+ * ambiente compartido de la Petstore.
+ */
 public class FindByStatusTest {
 
     private final PetApi petApi = new PetApi();
     private Long createdPetId;
     private Pet createdPet;
 
+    /**
+     * Crea una mascota con status "available" antes de cada test, para
+     * tener un dato conocido que buscar en los resultados.
+     */
     @BeforeMethod
     public void createAvailablePet() {
         createdPet = Pet.random();
@@ -29,6 +41,12 @@ public class FindByStatusTest {
         createdPetId = createResponse.as(Pet.class).getId();
     }
 
+
+    /**
+     * Busca mascotas por status "available" y verifica que todos los
+     * resultados tengan ese status, y que la mascota creada este
+     * incluida entre ellos.
+     */
     @Test
     public void findByStatus_available_includesCreatedPet() {
         Response findResponse = petApi.findByStatus(Constants.PetStatus.AVAILABLE);

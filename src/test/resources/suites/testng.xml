@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Petstore API Test Suite" verbose="1">
+
+    <test name="User Tests">
+        <classes>
+            <class name="com.qa.testing.test.user.CreateUserTest"/>
+            <class name="com.qa.testing.test.user.LoginTest"/>
+            <class name="com.qa.testing.test.user.LogoutTest"/>
+        </classes>
+    </test>
+
+    <test name="Pet Tests">
+        <classes>
+            <class name="com.qa.testing.test.pet.CreatePetTest"/>
+            <class name="com.qa.testing.test.pet.FindByStatusTest"/>
+            <class name="com.qa.testing.test.pet.GetPetTest"/>
+        </classes>
+    </test>
+
+    <test name="Store Tests">
+        <classes>
+            <class name="com.qa.testing.test.store.CreateOrderTest"/>
+        </classes>
+    </test>
+
+</suite>
